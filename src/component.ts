@@ -1,12 +1,12 @@
-import { ensureDirSync } from "https://deno.land/std@0.114.0/fs/ensure_dir.ts";
-import { bold, green } from "https://deno.land/std@0.114.0/fmt/colors.ts";
-import { getPathsAndNames } from "./utils.ts";
+import { ensureDirSync } from "jsr:@std/fs@1.0.14/ensure-dir";
 import { getComponentContent } from "./template.ts";
-import { Config } from "./types/config.ts";
+import type { Config } from "./types/config.ts";
+import type { Args } from "jsr:@std/cli@1.0.8/parse-args";
+import { getPathsAndNames } from "./utils.ts";
 
 function createComponent(
   config: Config,
-  argv: Record<string, boolean>,
+  argv: Args,
   componentPath: string,
   componentName: string,
   flat: boolean,
@@ -18,7 +18,7 @@ function createComponent(
 
   Deno.writeTextFileSync(
     file,
-    getComponentContent(fnName, name, config, argv.styles, styles.name),
+    getComponentContent(fnName, config, argv.styles, styles.name),
   );
   if (!flat && config.barrels && argv.barrels) {
     Deno.writeTextFileSync(barrelFile, `export { ${fnName} } from './${name}'`);
@@ -27,7 +27,7 @@ function createComponent(
     Deno.writeTextFileSync(styles.file, ".container {}");
   }
 
-  console.log(green(`Component ${bold(componentPath)} created successfully.`));
+  console.log(`Component ${componentPath} created successfully.`);
 }
 
 export { createComponent };

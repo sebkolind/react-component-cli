@@ -1,9 +1,7 @@
-import { Config } from "./types/config.ts";
-import { upperFirstCase } from "https://deno.land/x/case@2.2.0/mod.ts";
+import type { Config } from "./types/config.ts";
 
 function getComponentContent(
   fnName: string,
-  name: string,
   config: Config,
   withStyles: boolean,
   styleFileName: string,
@@ -15,9 +13,7 @@ function getComponentContent(
   }
 function ${fnName}() {
   return (
-    <div${withStyles ? ` className={styles.container}` : ""}>
-      <p>${upperFirstCase(name)}</p>
-    </div>
+    <div${withStyles ? ` className={styles.container}` : ""}></div>
   );
 }
 

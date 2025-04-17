@@ -1,12 +1,11 @@
 #!/usr/bin/env
 
-import { join } from "https://deno.land/std@0.114.0/path/mod.ts";
-import { parse } from "https://deno.land/std@0.114.0/flags/mod.ts";
-import { red } from "https://deno.land/std@0.114.0/fmt/colors.ts";
+import { join } from "jsr:@std/path@1.0.8";
+import { parseArgs } from "jsr:@std/cli@1.0.8/parse-args";
 import { loadConfig } from "./config.ts";
 import { createComponent } from "./component.ts";
 
-const argv = parse(Deno.args, {
+const argv = parseArgs(Deno.args, {
   boolean: ["styles", "barrels", "flat"],
   default: {
     barrels: true,
@@ -17,9 +16,7 @@ const argv = parse(Deno.args, {
 
 if (argv._.length === 0) {
   console.error(
-    red(
-      "Usage: rcc <component-name>/<sub-component-name>[,<sub-component-name>...] ...",
-    ),
+    "Usage: rcc <component-name>/<sub-component-name> ...",
   );
   Deno.exit(1);
 }
@@ -35,12 +32,9 @@ if (argv.flat) {
     const paths = String(arg).split("/");
     let basePath = "";
     for (const path of paths) {
-      const components = path.split(",");
-      for (const component of components) {
-        const currentPath = basePath ? join(basePath, component) : component;
-        createComponent(config, argv, currentPath, component, false);
-      }
-      basePath = join(basePath, path.split(",")[0]);
+      const currentPath = basePath ? join(basePath, path) : path;
+      createComponent(config, argv, currentPath, path, false);
+      basePath = join(basePath, path);
     }
   }
 }

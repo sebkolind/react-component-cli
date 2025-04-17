@@ -11,13 +11,13 @@ A CLI tool to generate React components with ease.
 ## Installation
 
 ```sh
-deno install --allow-read --allow-write --allow-env --allow-run -n rcc https://path/to/your/cli.ts
+deno install -A -n rcc https://path/to/your/cli.ts
 ```
 
 ## Usage
 
 ```sh
-rcc <component-name>/<sub-component-name>[,<sub-component-name>...] ...
+rcc <component-name>/<sub-component-name> [<sub-component-name> ...]
 ```
 
 ## Configuration

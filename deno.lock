@@ -1,7 +1,18 @@
 {
   "version": "4",
   "specifiers": {
-    "npm:lodash.merge@*": "4.6.2"
+    "jsr:@luca/cases@1": "1.0.0",
+    "jsr:@std/cli@*": "1.0.8",
+    "npm:lodash.merge@*": "4.6.2",
+    "npm:lodash.merge@4.6.2": "4.6.2"
+  },
+  "jsr": {
+    "@luca/cases@1.0.0": {
+      "integrity": "b5f9471f1830595e63a2b7d62821ac822a19e16899e6584799be63f17a1fbc30"
+    },
+    "@std/cli@1.0.8": {
+      "integrity": "3762d8dc9a373715c08d871c38d45e637b25266f013a1d0bbe560bca409de94e"
+    }
   },
   "npm": {
     "lodash.merge@4.6.2": {

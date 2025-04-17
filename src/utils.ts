@@ -1,11 +1,7 @@
-import {
-  camelCase,
-  paramCase,
-  pascalCase,
-} from "https://deno.land/x/case@2.2.0/mod.ts";
-import { join } from "https://deno.land/std@0.114.0/path/mod.ts";
-import { CaseFormat, Config } from "./types/config.ts";
-import { PathsAndNames } from "./types/paths.ts";
+import { camelCase, kebabCase, pascalCase } from "jsr:@luca/cases@1";
+import { join } from "jsr:@std/path@1.0.8";
+import type { CaseFormat, Config } from "./types/config.ts";
+import type { PathsAndNames } from "./types/paths.ts";
 
 /** Formats a component name according to the specified case format */
 function formatComponentName(
@@ -14,7 +10,7 @@ function formatComponentName(
 ): string {
   switch (caseFormat) {
     case "kebab-case":
-      return paramCase(name);
+      return kebabCase(name);
     case "camelCase":
       return camelCase(name);
     case "PascalCase":

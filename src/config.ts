@@ -1,7 +1,7 @@
-import { join } from "https://deno.land/std@0.114.0/path/mod.ts";
-import { parse } from "https://deno.land/std@0.114.0/encoding/yaml.ts";
-import merge from "npm:lodash.merge";
-import { Config } from "./types/config.ts";
+import { join } from "jsr:@std/path@1.0.8";
+import { parse } from "jsr:@std/yaml@1.0.5";
+import merge from "npm:lodash.merge@4.6.2";
+import type { Config } from "./types/config.ts";
 
 const defaultConfig: Config = {
   mainFile: {

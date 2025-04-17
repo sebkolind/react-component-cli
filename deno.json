@@ -1,4 +1,8 @@
 {
+  "name": "@sebkolind/react-component-cli",
+  "version": "0.0.1",
+  "license": "MIT",
+  "exports": "./src/mod.ts",
   "tasks": {
     "start": "deno run --allow-net --allow-read --allow-env --allow-write src/mod.ts",
     "compile": "deno compile --allow-net --allow-read --allow-env --allow-write --reload -o rcc src/mod.ts",
