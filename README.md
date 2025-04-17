@@ -22,7 +22,7 @@ rcc <component-name>/<sub-component-name>[,<sub-component-name>...] ...
 
 ## Configuration
 
-Create a configuration file at ~/.config/rcc/config.yml to customize the
+Create a configuration file at `~/.config/rcc/config.yml` to customize the
 generated files.
 
 ### Default Configuration
