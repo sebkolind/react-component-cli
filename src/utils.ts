@@ -34,12 +34,6 @@ function formatComponentFnName(
   }
 }
 
-/** Sanitizes a component name by removing special characters */
-// TODO Don't sanitize if the folder name should be kebab-case. Find a way to handle this case, where folder name is kebab-case, and component name is PascalCase
-function sanitizeComponentName(name: string): string {
-  return name.replace(/[-_]/g, "");
-}
-
 /** Generates paths and names for component files based on the configuration */
 function getPathsAndNames(
   path: string,
