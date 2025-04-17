@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-env --allow-write src/mod.ts",
+    "compile": "deno compile --allow-net --allow-read --allow-env --allow-write --reload -o rcc src/mod.ts",
+    "test": "deno test --allow-net --allow-read --allow-env --allow-write"
+  }
+}
