@@ -31,6 +31,8 @@ rcc <component-name>/<sub-component-name> [/<sub-component-name> ...]
 Create a configuration file at `~/.config/@sebkolind/rcc/config.yml` to customize the
 generated files.
 
+More details about the configuration file can be found [here](https://github.com/sebkolind/react-component-cli/blob/main/src/types/config.ts).
+
 ### Default Configuration
 
 ```yml
