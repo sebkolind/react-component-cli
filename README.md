@@ -10,8 +10,14 @@ A CLI tool to generate React components with ease.
 
 ## Installation
 
+### Installation
+
 ```sh
+# Using Deno
 deno install -A -n rcc jsr:@sebkolind/react-component-cli
+
+# Using npm
+npx jsr add @sebkolind/react-component-cli
 ```
 
 ## Usage
@@ -22,7 +28,7 @@ rcc <component-name>/<sub-component-name> [/<sub-component-name> ...]
 
 ## Configuration
 
-Create a configuration file at `~/.config/rcc/config.yml` to customize the
+Create a configuration file at `~/.config/@sebkolind/rcc/config.yml` to customize the
 generated files.
 
 ### Default Configuration

@@ -25,8 +25,13 @@ const defaultConfig: Config = {
 function loadConfig(): Config {
   try {
     const configFile = Deno.readTextFileSync(
-      // TODO Remember to change "rcc" to whatever name I choose for the CLI
-      join(Deno.env.get("HOME") || "", ".config", "rcc", "config.yml"),
+      join(
+        Deno.env.get("HOME") || "",
+        ".config",
+        "@sebkolind",
+        "rcc",
+        "config.yml",
+      ),
     );
 
     return merge({}, defaultConfig, parse(configFile) ?? {});
