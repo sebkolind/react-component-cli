@@ -11,11 +11,7 @@ A CLI tool to generate React components with ease.
 ## Installation
 
 ```sh
-# Using Deno
 deno install -A -n rcc jsr:@sebkolind/react-component-cli
-
-# Using npm
-npx jsr add @sebkolind/react-component-cli
 ```
 
 ## Usage
