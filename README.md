@@ -20,6 +20,23 @@ deno install -A -n rcc jsr:@sebkolind/react-component-cli
 rcc <component-name>/<sub-component-name> [/<sub-component-name> ...]
 ```
 
+## Example
+
+With the default configuration, which can be seen below, this command:
+
+```sh
+rcc MyComponent/MySubComponent
+```
+
+will generate the following files:
+
+- `MyComponent.tsx`
+- `MyComponent.module.scss`
+- `MyComponent/index.ts`
+- `MyComponent/MySubComponent/MySubComponent.tsx`
+- `MyComponent/MySubComponent/MySubComponent.module.scss`
+- `MyComponent/MySubComponent/index.ts`
+
 ## Configuration
 
 Create a configuration file at `~/.config/@sebkolind/rcc/config.yml` to customize the
