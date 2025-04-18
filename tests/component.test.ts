@@ -5,6 +5,7 @@ import {
 import { createComponent } from "../src/component.ts";
 import { defaultConfig } from "../src/config.ts";
 import { ensureDirSync } from "https://deno.land/std@0.114.0/fs/ensure_dir.ts";
+import { parseArgs } from "jsr:@std/cli/parse-args";
 
 function setupTest(componentPath: string) {
   ensureDirSync(componentPath);
@@ -27,10 +28,8 @@ function assertFileContent(filePath: string, content: string) {
 
 Deno.test("createComponent creates the correct folders and files", () => {
   const config = defaultConfig;
-  const argv = {
-    styles: true,
-    barrels: true,
-  };
+  const args = ["--styles", "--barrels"];
+  const argv = parseArgs(args);
   const componentPath = "./test-component";
   const componentName = "TestComponent";
   const flat = false;
@@ -53,11 +52,11 @@ Deno.test("createComponent creates the correct folders and files", () => {
     "export { TestComponent } from './TestComponent'",
   );
   assertFileExists(
-    `${componentPath}/styles.module.scss`,
+    `${componentPath}/${componentName}.module.scss`,
     "Style file does not exist",
   );
   assertEquals(
-    Deno.readTextFileSync(`${componentPath}/styles.module.scss`),
+    Deno.readTextFileSync(`${componentPath}/${componentName}.module.scss`),
     ".container {}",
   );
 
@@ -66,10 +65,8 @@ Deno.test("createComponent creates the correct folders and files", () => {
 
 Deno.test("createComponent does not create style file when styles flag is false", () => {
   const config = defaultConfig;
-  const argv = {
-    styles: false,
-    barrels: true,
-  };
+  const args = ["--barrels"];
+  const argv = parseArgs(args);
   const componentPath = "./test-component-no-styles";
   const componentName = "TestComponentNoStyles";
   const flat = false;
