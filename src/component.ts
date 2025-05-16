@@ -9,8 +9,8 @@ function createComponent(
   argv: Args,
   componentPath: string,
   componentName: string,
-  flat: boolean,
 ) {
+  const flat = config.structure === "flat";
   const { component: { name, fnName, dir, file }, barrelFile, styles } =
     getPathsAndNames(componentPath, componentName, flat, config);
 

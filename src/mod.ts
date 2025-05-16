@@ -25,7 +25,7 @@ const config = loadConfig();
 
 if (argv.flat) {
   for (const arg of argv._) {
-    createComponent(config, argv, "", String(arg), true);
+    createComponent(config, argv, "", String(arg));
   }
 } else {
   for (const arg of argv._) {
@@ -33,7 +33,7 @@ if (argv.flat) {
     let basePath = "";
     for (const path of paths) {
       const currentPath = basePath ? join(basePath, path) : path;
-      createComponent(config, argv, currentPath, path, false);
+      createComponent(config, argv, currentPath, path);
       basePath = join(basePath, path);
     }
   }

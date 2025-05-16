@@ -59,4 +59,5 @@ styleFile:
   nameFromComponent: true
 barrelFiles:
   extension: ".ts"
+structure: "nested"
 ```

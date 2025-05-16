@@ -32,10 +32,9 @@ Deno.test("createComponent creates the correct folders and files", () => {
   const argv = parseArgs(args);
   const componentPath = "./test-component";
   const componentName = "TestComponent";
-  const flat = false;
 
   setupTest(componentPath);
-  createComponent(config, argv, componentPath, componentName, flat);
+  createComponent(config, argv, componentPath, componentName);
 
   assertFileExists(componentPath, "Directory does not exist");
   assertFileExists(
@@ -69,10 +68,9 @@ Deno.test("createComponent does not create style file when styles flag is false"
   const argv = parseArgs(args);
   const componentPath = "./test-component-no-styles";
   const componentName = "TestComponentNoStyles";
-  const flat = false;
 
   setupTest(componentPath);
-  createComponent(config, argv, componentPath, componentName, flat);
+  createComponent(config, argv, componentPath, componentName);
 
   assertFileExists(componentPath, "Directory does not exist");
   assertFileExists(
