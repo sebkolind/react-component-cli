@@ -1,14 +1,10 @@
-# React Component CLI
+# React Create Component CLI
 
 A CLI tool to generate React components with ease.
 
-## Features
-
-- Generate React components with customizable templates
-- Supports different case formats for component names
-- Automatically creates style files and index files
-
 ## Installation
+
+This will install the CLI tool globally under the name `rcc`.
 
 ```sh
 deno install -A -n rcc jsr:@sebkolind/react-component-cli
@@ -19,6 +15,12 @@ deno install -A -n rcc jsr:@sebkolind/react-component-cli
 ```sh
 rcc <component-name>/<sub-component-name> [/<sub-component-name> ...]
 ```
+
+### Arguments
+
+- `barrels` (boolean): Generate barrel files for each component. Default: `true`
+- `flat` (boolean): Generate files in a flat structure. Default: `false`
+- `styles` (boolean): Generate style files for each component. Default: `true`
 
 ## Example
 
